@@ -1,0 +1,36 @@
+{
+  "entry": {
+    "index": "./index.js"
+  },
+  "dependencies": {
+    "atool-build": "0.4.x",
+    "babel-polyfill": "^6.3.14",
+    "isomorphic-fetch": "^2.2.1",
+    "react": "0.14.x",
+    "react-dom": "0.14.x",
+    "react-redux": "4.4.x",
+    "redux": "3.3.x",
+    "redux-actions": "0.9.x",
+    "redux-saga": "^0.8.2",
+    "reselect": "^2.0.3"
+  },
+  "devDependencies": {
+    "babel-eslint": "^5.0.0-beta6",
+    "dora": "0.2.x",
+    "dora-plugin-atool-build": "0.4.x",
+    "dora-plugin-livereload": "0.2.x",
+    "dora-plugin-proxy": "0.5.x",
+    "eslint": "1.10.x",
+    "eslint-config-airbnb": "3.x",
+    "eslint-plugin-react": "3.x",
+    "pre-commit": "1.x"
+  },
+  "pre-commit": [
+    "lint"
+  ],
+  "scripts": {
+    "start": "dora --plugins proxy,atool-build,livereload",
+    "build": "atool-build",
+    "lint": "eslint --ext .js,.jsx index.js"
+  }
+}
