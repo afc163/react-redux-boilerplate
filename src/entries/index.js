@@ -6,7 +6,7 @@ import { Provider } from 'react-redux';
 import { createStore, applyMiddleware, compose, combineReducers } from 'redux';
 import createSagaMiddleware from 'redux-saga';
 import { Router, Route, browserHistory } from 'react-router';
-import { syncHistoryWithStore, routerReducer } from 'react-router-redux';
+import { syncHistoryWithStore, routerReducer as routing } from 'react-router-redux';
 import reducers from '../reducers/index';
 import sagas from '../sagas/index';
 import App from '../containers/App';
@@ -20,8 +20,7 @@ const enhancer = compose(
   window.devToolsExtension ? window.devToolsExtension() : f => f
 );
 const store = createStore(combineReducers({
-  ...reducers,
-  routing: routerReducer,
+  ...reducers, routing,
 }), initialState, enhancer);
 
 //////////////////////
