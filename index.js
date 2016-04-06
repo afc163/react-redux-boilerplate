@@ -29,6 +29,9 @@ const selectors = createSelector([
 // Components
 
 class Count extends Component {
+  y = () => {
+    console.log(1);
+  }
   render() {
     const { dispatch, count } = this.props;
     return <div>
