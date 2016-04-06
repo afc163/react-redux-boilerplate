@@ -1,6 +1,6 @@
 {
   "entry": {
-    "index": "./index.js"
+    "index": "./src/entries/index.js"
   },
   "dependencies": {
     "atool-build": "0.6.x",
@@ -31,6 +31,6 @@
   "scripts": {
     "start": "dora --plugins proxy,webpack,livereload?enableJs=false",
     "build": "atool-build",
-    "lint": "eslint --ext .js,.jsx index.js"
+    "lint": "eslint --ext .js,.jsx src/"
   }
 }
