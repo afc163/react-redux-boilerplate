@@ -5,6 +5,7 @@
   "dependencies": {
     "atool-build": "0.6.x",
     "babel-polyfill": "^6.3.14",
+    "dora-plugin-webpack-hmr": "^0.1.0",
     "history": "^2.0.1",
     "isomorphic-fetch": "^2.2.1",
     "react": "0.14.x",
@@ -33,7 +34,7 @@
     "lint"
   ],
   "scripts": {
-    "start": "dora --plugins proxy,webpack,livereload?enableJs=false,browser-history?index=/src/entries/index.html",
+    "start": "dora --plugins proxy,webpack,webpack-hmr,livereload?enableJs=false,browser-history?index=/src/entries/index.html",
     "build": "atool-build",
     "lint": "eslint --ext .js,.jsx src/"
   }
