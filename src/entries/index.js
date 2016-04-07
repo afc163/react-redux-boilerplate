@@ -26,9 +26,15 @@ const store = createStore(combineReducers({
 //////////////////////
 // Routes
 
+const Foo = (props) =>
+  <div>
+    Foo
+  </div>
+
 const Routes = ({ history }) =>
   <Router history={history}>
     <Route path="/" component={App} />
+    <Route path="/foo" component={Foo} />
   </Router>
 
 //////////////////////
