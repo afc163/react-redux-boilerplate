@@ -35,7 +35,7 @@ if (module.hot) {
 
 const history = syncHistoryWithStore(browserHistory, store);
 
-const render = () => {
+let render = () => {
   const Routes = require('../routes/index');
   ReactDOM.render(
     <Provider store={store}>
@@ -45,8 +45,21 @@ const render = () => {
 };
 
 if (module.hot) {
+  const renderNormally = render;
+  const renderException = (error) => {
+    const RedBox = require('redbox-react');
+    ReactDOM.render(<RedBox error={error}/>, document.getElementById('root'));
+  };
+  render = () => {
+    try {
+      renderNormally();
+    } catch (error) {
+      console.error('error', error);
+      renderException(error);
+    }
+  };
   module.hot.accept('../routes/index', () => {
-    setTimeout(render);
+    render()
   });
 }
 
