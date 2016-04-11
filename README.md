@@ -1,6 +1,6 @@
 # react-redux-boilerplate
 
-A boilerplate with react, redux, redux-saga ...
+A boilerplate with react, redux, redux-saga, react-router, webpack, babel, css-modules ...
 
 ## 环境准备
 
@@ -12,7 +12,7 @@ $ npm install
 
 想要更好的开发体验，还需安装两个 Chrome 插件：[Redux DevTools](https://chrome.google.com/webstore/detail/lmhkpmbekcpmknklioeibfkpmmfibljd) 和 [LiveReload](https://chrome.google.com/webstore/detail/livereload/jnihajbhpnppcggbcgedagnkighmdlei) 。
 
-## 启动调试服务器
+## 启动调试
 
 ```bash
 $ npm start
