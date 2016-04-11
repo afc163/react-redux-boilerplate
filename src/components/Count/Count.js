@@ -1,7 +1,7 @@
 import styles from './Count.module.less';
 import React, { Component, PropTypes } from 'react';
 import classnames from 'classnames';
-import { COUNT_DECREASE, COUNT_DECREASE_ASYNC, COUNT_REDUCE } from '../../constraints/count';
+import { COUNT_DECREASE, COUNT_DECREASE_ASYNC, COUNT_REDUCE } from '../../constants/count';
 
 const Count = ({ dispatch, count }) =>
   <div className={classnames({

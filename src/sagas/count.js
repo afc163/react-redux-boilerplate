@@ -1,6 +1,6 @@
 import { isCancelError } from 'redux-saga';
 import { take, call, put, fork, cancel } from 'redux-saga/effects';
-import { COUNT_DECREASE_ASYNC, COUNT_DECREASE } from '../constraints/count';
+import { COUNT_DECREASE_ASYNC, COUNT_DECREASE } from '../constants/count';
 
 function delay(ms) {
   return new Promise((resolve) => setTimeout(resolve, ms));

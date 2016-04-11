@@ -1,6 +1,6 @@
 import { handleActions } from 'redux-actions';
 
-import { COUNT_DECREASE, COUNT_REDUCE } from '../constraints/count';
+import { COUNT_DECREASE, COUNT_REDUCE } from '../constants/count';
 
 export default handleActions({
   [COUNT_DECREASE](state) {
