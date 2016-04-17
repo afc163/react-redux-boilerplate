@@ -24,8 +24,7 @@ const store = createStore(combineReducers({
 
 if (module.hot) {
   module.hot.accept('../reducers', () => {
-    const reducers = require('../reducers');
-    const combinedReducers = combineReducers({...reducers, routing});
+    const combinedReducers = combineReducers({ ...require('../reducers'), routing });
     store.replaceReducer(combinedReducers);
   });
 }
@@ -48,7 +47,7 @@ if (module.hot) {
   const renderNormally = render;
   const renderException = (error) => {
     const RedBox = require('redbox-react');
-    ReactDOM.render(<RedBox error={error}/>, document.getElementById('root'));
+    ReactDOM.render(<RedBox error={error} />, document.getElementById('root'));
   };
   render = () => {
     try {

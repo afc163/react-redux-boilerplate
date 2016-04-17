@@ -5,9 +5,10 @@ import { COUNT_INCREASE, COUNT_INCREASE_ASYNC, COUNT_DECREASE } from '../../cons
 
 const Count = ({ dispatch, count }) =>
   <div className={classnames({
-      [styles.normal]: count % 2 === 0,
-      [styles.odd]: count % 2 === 1,
-    })}>
+    [styles.normal]: count % 2 === 0,
+    [styles.odd]: count % 2 === 1,
+  })}
+  >
     <div>{count}</div>
     <button onClick={() => { dispatch({ type: COUNT_INCREASE }); }}>+</button>
     <button onClick={() => { dispatch({ type: COUNT_DECREASE }); }}>-</button>
