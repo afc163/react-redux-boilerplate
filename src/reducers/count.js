@@ -1,12 +1,12 @@
 import { handleActions } from 'redux-actions';
 
-import { COUNT_DECREASE, COUNT_REDUCE } from '../constants/count';
+import { COUNT_INCREASE, COUNT_DECREASE } from '../constants/count';
 
 export default handleActions({
-  [COUNT_DECREASE](state) {
+  [COUNT_INCREASE](state) {
     return state + 1;
   },
-  [COUNT_REDUCE](state) {
+  [COUNT_DECREASE](state) {
     return state - 1;
   },
 }, 0);

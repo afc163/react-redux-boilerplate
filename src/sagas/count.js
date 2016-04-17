@@ -1,6 +1,6 @@
 import { isCancelError } from 'redux-saga';
 import { take, call, put, fork, cancel } from 'redux-saga/effects';
-import { COUNT_DECREASE_ASYNC, COUNT_DECREASE } from '../constants/count';
+import { COUNT_INCREASE_ASYNC, COUNT_INCREASE } from '../constants/count';
 
 function delay(ms) {
   return new Promise((resolve) => setTimeout(resolve, ms));
@@ -9,7 +9,7 @@ function delay(ms) {
 function* decreaseCountWithDelay() {
   try {
     yield call(delay, 300);
-    yield put({ type: COUNT_DECREASE });
+    yield put({ type: COUNT_INCREASE });
   } catch (e) {
     if (isCancelError(e)) {}
   }
@@ -18,7 +18,7 @@ function* decreaseCountWithDelay() {
 export default function* countSaga() {
   let task;
   while (true) {
-    yield take(COUNT_DECREASE_ASYNC);
+    yield take(COUNT_INCREASE_ASYNC);
     if (task) yield cancel(task);
     task = yield fork(decreaseCountWithDelay);
   }
